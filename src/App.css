@@ -1,0 +1,31 @@
+:root {
+  --font-clr: #ffffff;
+  --bg-clr: #f7dae7;
+  --clr-primary: #602ad5;
+  --clr-secondary: #d8cdef;
+  --clr-accent: #613ab6;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* navbar  */
+
+nav{
+  background-color: var(--clr-primary);
+  height: 5rem;
+  display: flex;
+ color: var(--font-clr);
+  align-items: center;
+  padding-inline:3rem;
+
+}
+.navbar-heading {
+  font-size: xx-large;
+}
+/* navbar end */
+
+/*  */
