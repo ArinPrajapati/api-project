@@ -6,14 +6,13 @@ import Animal from "./Animal";
 export default function Api_connect() {
   const [data, setData] = useState("");
   const [loading, seLoading] = useState(false);
-  const [showAnimalDetails, setShowAnimalDetails] = useState(false);
-  const [selectedAnimal, setSelectedAnimal] = useState(null);
+  
 
   async function getData() {
     try {
       seLoading(true);
       const response = await axios
-        .get("https://api.api-ninjas.com/v1/animals?name=fox", {
+        .get("https://api.api-ninjas.com/v1/animals?name=tiger", {
           headers: {
             "X-Api-Key": "syADX+R4WkxmKMstuOE6Gg==ipIiD9ut7tcJ5X4w",
           },
@@ -30,28 +29,19 @@ export default function Api_connect() {
     getData();
   }, []);
 
-  function handleClick(animal) {
-    setSelectedAnimal(animal);
-    setShowAnimalDetails(true);
-  }
+  // function handleClick(animal) {
+  //   setSelectedAnimal(animal);
+  //   setShowAnimalDetails(true);
+  // }
 
   return (
     <>
       {loading == true ? <Loading /> : ""}
       {data && data.length > 0 ? (
-        <ul>
-          {data.map((animal) => (
-            <div key={animal.name}>
-              <li >{animal.name}</li>
-             
-              <button onClick={() => handleClick(animal)}>open</button>
-               {showAnimalDetails && selectedAnimal && (
-                <Animal animal={selectedAnimal} />
-              )}
-            </div>
-           
-          ))}
-        </ul>
+        <>{data.map((animal) => {
+         return <Animal animal={animal} />
+        })}</>
+      
       ) : null}
      
 

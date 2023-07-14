@@ -3,6 +3,8 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './component/Navbar'
 import Api_connect from './component/Api_connect'
+import Animal from './component/Animal'
+
 
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
     <>
     <Navbar />
     <Api_connect />
+    <Animal />
      
     </>
   )

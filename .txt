@@ -1,0 +1,33 @@
+characteristics: 
+average_litter_size: "7"
+color: "BlackWhiteTan"
+common_name: "American Foxhound"
+diet: "Omnivore"
+distinctive_feature: "Long legs and wide, flat ears"
+group: "Dog"
+lifespan: "10 to 12 years"
+skin_type
+: 
+"Hair"
+slogan: "Sweet, kind, loyal, and very loving!"
+temperament: "Mix of affectionate, loving, and stubborn"
+training: "Medium"
+type: "Hound"
+[[Prototype]]
+: 
+Objectlocations
+: Array(1)0: "North-America"
+length
+: 
+1
+[[Prototype]]
+: 
+Array(0)
+name: "American Foxhound"
+taxonomy: class: "Mammalia"
+family: "Canidae"
+genus: "Canis"
+kingdom: "Animalia"
+order: "Carnivora"
+phylum: "Chordata"
+scientific_name: "Canis lupus"
