@@ -1,24 +1,24 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import Loading from "../Loading";
-import Animal from "./Animal";
+// import axios from "axios";
+// import { useState, useEffect } from "react";
+// import Loading from "../Loading";
+// import Animal from "./Animal";
 
-export default function Api_connect(props) {
-
-  
+// export default function Api_connect(props) {
 
   
 
+  
 
-  return (
-    <>
+
+//   return (
+//     <>
     
 
-    </>
-  );
+//     </>
+//   );
  
-}
+// }
 
-Api_connect.defaultprops = {
-  name:"fox"
-}
+// Api_connect.defaultprops = {
+//   name:"fox"
+// }

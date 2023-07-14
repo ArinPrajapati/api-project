@@ -2,17 +2,18 @@ import { useState, useEffect } from "react";
 import Animal from "./Animal";
 import axios from "axios";
 import Loading from "../Loading";
+import "../style/Search.css"
 
 export default function Search() {
-  const [item, setItem] = useState("");
+  const [item, setItem] = useState("fox");
   const [data, setData] = useState([]);
   const [loading, seLoading] = useState(false);
 
-  async function getData(name) {
+  async function getData() {
     try {
       seLoading(true);
       const response = await axios
-        .get(`https://api.api-ninjas.com/v1/animals?name=${name}`, {
+        .get(`https://api.api-ninjas.com/v1/animals?name=${item}`, {
           headers: {
             "X-Api-Key": "syADX+R4WkxmKMstuOE6Gg==ipIiD9ut7tcJ5X4w",
           },
@@ -24,17 +25,26 @@ export default function Search() {
       seLoading(false);
     }
   }
+
+  useEffect (()=>{
+    getData()
+  },[])
+
   return (
     <>
-      <input
-        type="text"
-        
-        onChange={(e) => {
-         
-
-          getData(e.target.value);
-        }}
-      />
+      <div className="inpuDiv">
+          <igroup>
+              <input 
+                type="text"
+                value={item}
+                onChange={(e) => {
+                    setItem(e.target.value)
+              
+                }}
+              />
+              <button onClick={()=>{getData(item)}}>Find</button>
+          </igroup>
+      </div>
 
       {loading == true ? <Loading /> : null}
       {data && data.length > 0 ? (

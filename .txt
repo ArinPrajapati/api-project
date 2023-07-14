@@ -1,6 +1,6 @@
 characteristics: 
 average_litter_size: "7"
-color: "BlackWhiteTan"
+color: "Black White Tan"
 common_name: "American Foxhound"
 diet: "Omnivore"
 distinctive_feature: "Long legs and wide, flat ears"

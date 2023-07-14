@@ -1,0 +1,37 @@
+.inpuDiv{
+    /* background: blue; */
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto;
+}
+
+igroup{
+  background: white;
+ /* padding: .4rem; */
+ box-shadow: 2px 2px 58px -5px #00000059;
+ width: 60%;
+ height: 3rem;
+ padding-left: 1rem;
+ 
+}
+
+igroup > input , button{
+    all:unset;
+    font-size: 1.3rem;
+}
+igroup > input{
+    width: 88%;
+}
+
+button{
+    background: var(--clr-accent);
+    width: 12%;
+    text-align: center;
+    height: 100%;
+    /* border-radius: 0.2rem; */
+    color: white;
+    font-weight: bold;
+   
+}
