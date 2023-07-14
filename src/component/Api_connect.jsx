@@ -1,13 +1,19 @@
 import axios from "axios";
 import { useState ,useEffect } from "react";
+import Loading from "../Loading";
+import Char from "./Char"
+
 
 export default function Api_connect(){
-    const [data , setData] = useState("")     
+    const [data , setData] = useState("");
+    const [loading , seLoading] = useState(false)  ;
+    const [charShow ,setCharShow] = useState(false)
 
   async function getData() {
 
 
 	try {
+        seLoading(true)
 		const response = await axios.get('https://api.api-ninjas.com/v1/animals?name=fox',{
             headers:{
                 'X-Api-Key': 'syADX+R4WkxmKMstuOE6Gg==ipIiD9ut7tcJ5X4w'
@@ -24,26 +30,41 @@ export default function Api_connect(){
 	catch (error) {
 		console.log(error);
 	}
+
+    seLoading(false)
 }
 
    useEffect(()=>{
       getData()
-      console.log(data)
+      
       
    },[]);
 
+  function handleClick(){
+    if(animal.name === key){
+        <button onClick={handleClick}>open</button>
+    }  
+  }
 
    return(
    <>
-   {data && data.length > 0 (
-    <ul>
-        {
-            data.map(animal => (
-                <li > {data[0].name} </li>
-            ))
-        }
-    </ul>
-   ) }
+   {loading == true ? <Loading /> : ""  }
+     {data && data.length > 0 ? (
+        <ul>
+          {data.map(animal => (
+            <div>
+                <li key={animal.name}>{animal.name}</li>
+                {charShow && <Char />}
+                <button onClick={handleClick}>open</button>
+            </div>
+            
+          ))}
+        </ul>
+        
+      ) : null}
+          
+      {console.log(data)}
+      
    
    
  
