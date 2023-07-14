@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Error from "./Error"
 
 export default function Animal(props) {
   const [showAnimalDetails, setShowAnimalDetails] = useState(false);
@@ -9,13 +10,16 @@ export default function Animal(props) {
 
   const {family , genus , kingdom , order, phylum , scientific_name} = taxonomy || {};
 
-
+  
+  if(props.animal === undefined){
+    return(  <Error />) 
+  }
   
 
   console.log(props.animal);
   return (
+   
     <>
-    
        <div className="heading">
            <h2>{name}</h2>
            <h3>{common_name}</h3>

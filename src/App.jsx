@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './component/Navbar'
 import Api_connect from './component/Api_connect'
 import Animal from './component/Animal'
+import Search from './component/Search'
 
 
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
     <Navbar />
+    <Search />
     <Api_connect />
     <Animal />
      
