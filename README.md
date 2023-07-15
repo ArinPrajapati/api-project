@@ -28,6 +28,7 @@ to see the project
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of item to fetch |
+| `key`      | `string` | **Required**. key as header to fetch |
 
 
 
