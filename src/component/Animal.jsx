@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Error from "./Error"
+import "../style/Animal.css"
 
 export default function Animal(props) {
   
@@ -11,31 +12,36 @@ export default function Animal(props) {
 
   
   if(props.animal === undefined ){
-    return( <h1>end</h1>) 
+    return( <h1> </h1>) 
   }
   
   
 
-  console.log(props.animal);
+  
   return (
    
-    <>
+    <div id="animal-info">
        <div className="heading">
            <h2>{name}</h2>
-           <h3>{common_name}</h3>
-       </div>
-       {/* {slogan ? <p>"{slogan} "</p>:<p>" ... is that a {name} you have ? "</p>} */}
+         
        <p>"{slogan || `... is that a ${name} you have ?`} "</p>
-       <p>Color: {color || "?"}</p>
-       <p>Diet: {diet}</p>
-       <p>Lifespna: {lifespan}</p>
-       <p>temperament: {temperament || "no data on it"}</p>
-       <p>Group: {group || <i>"loner"</i>}</p>
-       <p>Distinctive Feature : {distinctive_feature || "none"}</p>
-       <p>Location: {Array.isArray(locations) && locations.length > 0 ? locations.join(', '):'no info'}</p>
+       </div>
+       
+       <div className="details">
+         <ul>
+           <li>Color: {color || "?"}</li>
+           <li>Diet: {diet}</li>
+           <li>Lifespna: {lifespan}</li>
+           <li>temperament: {temperament || "no data on it"}</li>
+           <li>Group: {group || <i>"loner"</i>}</li>
+           <li>Distinctive Feature : {distinctive_feature || "none"}</li>
+           <li>Scientific Name : {scientific_name}</li>
+           <li>Location: {Array.isArray(locations) && locations.length > 0 ? locations.join(', '):'no info'}</li>
+         </ul>
+       </div>
        
 
  
-    </>
+    </div>
   );
 }

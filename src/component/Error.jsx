@@ -1,5 +1,9 @@
-export default function Error() {
+import "../style/Error.css"
+
+export default function Error(props) {
     return (
-       <p>this is a error component </p> 
+       <div id="err" >
+           <p > {props.error} </p> 
+       </div>
     )
 } 

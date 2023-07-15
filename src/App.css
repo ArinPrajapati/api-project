@@ -1,6 +1,7 @@
 :root {
   --font-clr: #ffffff;
   --bg-clr: #f7dae7;
+  --bg-clr-secondary:#f8f0f4;
   --clr-primary: #602ad5;
   --clr-secondary: #d8cdef;
   --clr-accent: #613ab6;
@@ -12,6 +13,9 @@
   box-sizing: border-box;
 }
 
+body{
+  background:var(--bg-clr);
+}
 /* navbar  */
 
 nav{

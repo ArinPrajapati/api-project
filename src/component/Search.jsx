@@ -3,29 +3,37 @@ import Animal from "./Animal";
 import axios from "axios";
 import Loading from "../Loading";
 import "../style/Search.css"
+import Error from "./Error"; 
+
 
 export default function Search() {
   const [item, setItem] = useState("fox");
   const [data, setData] = useState([]);
   const [loading, seLoading] = useState(false);
+  const [errorM , setErrorM] = useState("")
+  const [errorS , setErrorS] = useState(true)
 
+ 
   async function getData() {
     try {
       seLoading(true);
       const response = await axios
         .get(`https://api.api-ninjas.com/v1/animals?name=${item}`, {
           headers: {
-            "X-Api-Key": "syADX+R4WkxmKMstuOE6Gg==ipIiD9ut7tcJ5X4w",
+            "X-Api-Key":import.meta.env.VITE_API_KEY,
           },
         })
         .then((response) => setData(response.data));
+        setErrorS(false)
     } catch (error) {
-      <h1>{error}</h1>;
+      setErrorM(error.message)
+     
+      // setErrorM(true)  
+      
     } finally {
       seLoading(false);
     }
   }
-
   useEffect (()=>{
     getData()
   },[])
@@ -33,7 +41,7 @@ export default function Search() {
   return (
     <>
       <div className="inpuDiv">
-          <igroup>
+          <div id="igroup">
               <input 
                 type="text"
                 value={item}
@@ -43,14 +51,15 @@ export default function Search() {
                 }}
               />
               <button onClick={()=>{getData(item)}}>Find</button>
-          </igroup>
+          </div>
       </div>
-
+      
       {loading == true ? <Loading /> : null}
+      {errorS == true ? <Error error={errorM}/> : null }
       {data && data.length > 0 ? (
         <>
           {data.map((animal) => {
-            return <Animal animal={animal} />;
+            return <Animal key={animal.name} animal={animal} />;
           })}
         </>
       ) : null}

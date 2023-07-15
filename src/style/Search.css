@@ -7,7 +7,7 @@
     margin: 3rem auto;
 }
 
-igroup{
+#igroup{
   background: white;
  /* padding: .4rem; */
  box-shadow: 2px 2px 58px -5px #00000059;
@@ -17,11 +17,11 @@ igroup{
  
 }
 
-igroup > input , button{
+#igroup > input , button{
     all:unset;
     font-size: 1.3rem;
 }
-igroup > input{
+#igroup > input{
     width: 88%;
 }
 
@@ -33,5 +33,11 @@ button{
     /* border-radius: 0.2rem; */
     color: white;
     font-weight: bold;
+    transition: all 0.2s ;
    
+}
+
+button:active{
+    background: #000;
+    box-shadow: inset 0px 0px 0px 4px white;
 }

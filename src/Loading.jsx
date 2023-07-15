@@ -1,5 +1,12 @@
+import "./style/Loading.css";
+import img from '../src/Loading.gif'
+
 export default function Loading(){
   return(
-    <h1>loading...</h1>
+    <div className="loading">
+      <img src={img} alt="" />
+    
+
+    </div>
   )
 }
